@@ -1,6 +1,6 @@
 # Delta-Hedging Lab
 
-How well does Black-Scholes delta hedging work once you leave the textbook? I built a hedging simulator to test the theory piece by piece (discrete rebalancing, the wrong volatility, transaction costs), then ran the same strategy on three years of real BTC options data from Deribit.
+How well does Black-Scholes delta hedging work once you leave the textbook? I built a hedging simulator to test the theory piece by piece (discrete rebalancing, the wrong volatility, transaction costs), then ran the same strategy on three years of real BTC volatility and data from Deribit.
 
 ## Key results
 
@@ -12,7 +12,7 @@ How well does Black-Scholes delta hedging work once you leave the textbook? I bu
 | Does Leland's cost-adjusted vol cover rebalancing costs? | Yes: mean P&L **0.002** after excluding the one-off set-up and unwind fees |
 | BTC: is implied vol above realised? | Yes in **71%** of 153 trades; average premium **6.1 vol points** |
 | BTC: weekly short 30-day ATM call, hedged daily | Average P&L **+0.75% of spot** per trade, worst trade **−4.7%** |
-| BTC: does the edge survive the bid-ask spread? | Break-even at **[X] vol points** below mid |
+| BTC: does the edge survive the bid-ask spread? | Break-even at **6.6 vol points** below mid |
 
 A quick sanity check on the BTC number: a 30-day ATM option has vega ≈ 0.4·√(30/365) ≈ 0.115% of spot per vol point. 6.1 points × 0.115 ≈ 0.70%, close to the 0.75% the backtest produced.
 
